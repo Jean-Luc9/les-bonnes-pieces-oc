@@ -1,11 +1,22 @@
-# 7697016-Front-End.1
+# Les Bonnes Pièces - Car Parts E-Commerce
 
-Code base du fil rouge pour le cours OpenClassrooms [Créez des pages web dynamiques avec JavaScript](https://openclassrooms.com/fr/courses/7697016-creez-des-pages-web-dynamiques-avec-javascript)
+This is the first project I am sharing publicly on GitHub, though not the first one I have built. The original concept comes from my JavaScript learning path on **OpenClassrooms**, which I built step by step following their curriculum.
 
-## Installation
+## About the Project
 
-Après avoir cloné le repo vous avez plusieurs options pour lancer le projet. 
+This project focuses on core JavaScript fundamentals. The main goals were to dynamically generate web pages from existing data, build interactive user interfaces, communicate with an API, and integrate external libraries.
 
-Si vous utiliser VSCode ou un autre éditeur de code avec une extersion de serveur web comme live server, vous pouvez lancer direcement votre site avec l'extension que vous utilisez habituellement. 
+## Key Features
 
-Dans le cas contraire vous pouvez installer les dépendances de ce projet avec `npm install` puis lancer le projet via la commande `npm start`. Vous verrez dans le termninal le lien vers le site (par defaut http://127.0.0.1:8080 )
+* **Dynamic Product Rendering:** Generate the product catalog dynamically from JSON data.
+* **Filtering & Sorting:** Filter car parts by availability or price, and sort them in ascending or descending order.
+* **Customer Reviews:** Fetch and display customer reviews from an API, and allow users to submit new ones.
+* **Data Visualization:** Display review statistics using an external charting library.
+
+## Technologies & Concepts Used
+
+* **Languages:** HTML5, CSS3, Vanilla JavaScript (ES6+)
+* **DOM Manipulation:** Creating, updating, and removing HTML elements dynamically
+* **Asynchronous JavaScript:** Handling API requests with `fetch`, Promises, and `async/await`
+* **Data Storage:** Managing local data using `localStorage` and JSON files
+* **External Libraries:** Integrating third-party libraries (such as Chart.js)
