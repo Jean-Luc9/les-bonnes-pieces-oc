@@ -1,8 +1,21 @@
-import { ajoutListenersAvis, ajoutListenerEnvoyerAvis } from "./avis.js";
+import { ajoutListenersAvis, ajoutListenerEnvoyerAvis, afficherGraphiqueAvis } from "./avis.js";
+
    
-   // Récuperation des pieces depuis le fichier JSON
-const reponse = await fetch("http://localhost:8081/pieces");
-const pieces = await reponse.json();
+//Récupération des pièces eventuellement stockées dans le localStorage
+let pieces = window.localStorage.getItem('pieces');
+if (pieces === null){
+   // Récupération des pièces depuis l'API
+   const reponse = await fetch('http://localhost:8081/pieces/');
+   pieces = await reponse.json();
+   // Transformation des pièces en JSON
+   const valeurPieces = JSON.stringify(pieces);
+   // Stockage des informations dans le localStorage
+   window.localStorage.setItem("pieces", valeurPieces);
+}else{
+   pieces = JSON.parse(pieces);
+}
+
+
 ajoutListenerEnvoyerAvis();
 
 
@@ -101,3 +114,13 @@ boutonTrier.addEventListener("click", ()=>{
    });
       genererPiece(aAfficher);
    });
+
+
+   const boutonMettreAJour = document.querySelector(".btn-mettre-a-jour");
+   boutonMettreAJour.addEventListener("click", ()=>{
+      window.localStorage.removeItem("pieces");
+      
+      });
+
+
+       await afficherGraphiqueAvis();
